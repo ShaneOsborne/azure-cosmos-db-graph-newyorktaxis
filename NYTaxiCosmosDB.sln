@@ -1,0 +1,41 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.28803.202
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GraphBulkExecutor", "GraphBulkExecutor\GraphBulkExecutor.csproj", "{7CF0EECE-961F-4389-B5F2-15F23D53E2DF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BusinessObjects", "BusinessObjects\BusinessObjects.csproj", "{8ED25AD3-9711-45BC-A99F-8F87B813F141}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|x64 = Debug|x64
+		Release|Any CPU = Release|Any CPU
+		Release|x64 = Release|x64
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7CF0EECE-961F-4389-B5F2-15F23D53E2DF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7CF0EECE-961F-4389-B5F2-15F23D53E2DF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7CF0EECE-961F-4389-B5F2-15F23D53E2DF}.Debug|x64.ActiveCfg = Debug|x64
+		{7CF0EECE-961F-4389-B5F2-15F23D53E2DF}.Debug|x64.Build.0 = Debug|x64
+		{7CF0EECE-961F-4389-B5F2-15F23D53E2DF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7CF0EECE-961F-4389-B5F2-15F23D53E2DF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7CF0EECE-961F-4389-B5F2-15F23D53E2DF}.Release|x64.ActiveCfg = Release|x64
+		{7CF0EECE-961F-4389-B5F2-15F23D53E2DF}.Release|x64.Build.0 = Release|x64
+		{8ED25AD3-9711-45BC-A99F-8F87B813F141}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8ED25AD3-9711-45BC-A99F-8F87B813F141}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8ED25AD3-9711-45BC-A99F-8F87B813F141}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{8ED25AD3-9711-45BC-A99F-8F87B813F141}.Debug|x64.Build.0 = Debug|Any CPU
+		{8ED25AD3-9711-45BC-A99F-8F87B813F141}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8ED25AD3-9711-45BC-A99F-8F87B813F141}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8ED25AD3-9711-45BC-A99F-8F87B813F141}.Release|x64.ActiveCfg = Release|Any CPU
+		{8ED25AD3-9711-45BC-A99F-8F87B813F141}.Release|x64.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {247B58AE-E705-47F4-AEDD-342022712258}
+	EndGlobalSection
+EndGlobal
