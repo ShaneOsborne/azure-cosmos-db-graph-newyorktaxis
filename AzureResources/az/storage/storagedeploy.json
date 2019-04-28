@@ -21,7 +21,7 @@
     {
       "type": "Microsoft.Storage/storageAccounts",
       "name": "[variables('catalogstorage')]",
-      "apiVersion": "2016-01-01",
+      "apiVersion": "2018-11-01",
       "location": "[resourceGroup().location]",
       "tags": {
         "displayName": "[variables('catalogstorage')]"
@@ -29,7 +29,7 @@
       "sku": {
         "name": "Standard_LRS"
       },
-      "kind": "Storage",
+      "kind": "StorageV2",
       "properties": {
         "networkAcls": {
           "bypass": "AzureServices",
@@ -37,7 +37,8 @@
           "ipRules": [],
           "virtualNetworkRules": []
         },
-        "supportsHttpsTrafficOnly": false
+        "supportsHttpsTrafficOnly": false,
+        "isHnsEnabled": true
       }
     },
     {

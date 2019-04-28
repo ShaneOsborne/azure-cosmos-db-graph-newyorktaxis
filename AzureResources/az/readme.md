@@ -1,4 +1,5 @@
 ##Install Powershell Tools
+##https://docs.microsoft.com/en-us/cli/azure/?view=azure-cli-latest
 ## Install-Module -Name Az -AllowClobber (https://docs.microsoft.com/en-us/powershell/azure/install-az-ps?view=azps-1.8.0)
 ## https://github.com/PowerShell/PowerShell/releases/tag/v6.2.0
 ## https://github.com/PowerShell/PowerShell/releases/download/v6.2.0/PowerShell-6.2.0-win-x64.msi

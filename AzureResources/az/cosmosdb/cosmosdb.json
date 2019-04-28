@@ -28,7 +28,7 @@
     {
       "name": "[parameters('name')]",
       "type": "Microsoft.DocumentDB/databaseAccounts",
-      "apiVersion": "2016-03-31",
+      "apiVersion": "2015-04-08",
       "location": "[parameters('location')]",
       "properties": {
         "locations": [
@@ -36,7 +36,12 @@
             "locationName": "[parameters('location')]"
           }
         ],
-        "databaseAccountOfferType": "[parameters('tier')]"
+        "databaseAccountOfferType": "[parameters('tier')]",
+        "capabilities": [
+          {
+            "name": "EnableGremlin"
+          }
+        ]
       }
     }
   ]
