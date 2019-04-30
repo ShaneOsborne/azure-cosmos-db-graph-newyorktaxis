@@ -20,6 +20,7 @@ namespace GraphBulkExecutor
     using Newtonsoft.Json;
     using System.IO;
     using System.Linq;
+    using Microsoft.Azure.CosmosDB.BulkExecutor.Graph.Element;
 
     class Program
     {
@@ -28,6 +29,12 @@ namespace GraphBulkExecutor
         private static readonly string DatabaseName = ConfigurationManager.AppSettings["DatabaseName"];
         private static readonly string CollectionName = ConfigurationManager.AppSettings["CollectionName"];
         private static readonly int CollectionThroughput = int.Parse(ConfigurationManager.AppSettings["CollectionThroughput"]);
+
+        //Keys for import
+        //private static int GreenTripVertexIndex = 1;
+
+        private static List<GremlinEdge> Edges = new List<GremlinEdge>();
+        private static List<GremlinVertex> Vertices = new List<GremlinVertex>();
 
         private static readonly ConnectionPolicy ConnectionPolicy = new ConnectionPolicy
         {
@@ -77,8 +84,9 @@ namespace GraphBulkExecutor
         private async Task<BulkImportResponse> AddGreenTaxiTripsAsVertices(IBulkExecutor graphbulkExecutor, CancellationToken token, List<GreenTrip> greenTrips)
         {
             //Add Trips as Vertexes
+            ConvertBusinessObjects.ConvertGreenTripsToVertices(greenTrips, Vertices, Edges);
             return await graphbulkExecutor.BulkImportAsync(
-                    ConvertBusinessObjects.ConvertGreenTripsToVertices(greenTrips),
+                    Vertices,
                     enableUpsert: true,
                     disableAutomaticIdGeneration: true,
                     maxConcurrencyPerPartitionKeyRange: null,
@@ -178,7 +186,6 @@ namespace GraphBulkExecutor
 
 
                 //Now add Taxi Data
-                //IEnumerable<GremlinVertex>
                 List<GreenTrip> greenTrips = new List<GreenTrip>();
 
                 //Loop through our JSON file, import batches into an array and bulk import them
@@ -186,14 +193,13 @@ namespace GraphBulkExecutor
                 //Read our file into memory (may not work if file too big)
                 String jsonFileContents = File.ReadAllText(@"C:\TaxiData\green_tripdata_2018-01.json");
 
-                //GreenTrip greenTrip = JsonConvert.DeserializeObject<GreenTrip>(File.ReadAllText(@"C:\TaxiData\green_tripdata_2018-01.json"));
                 greenTrips = JsonConvert.DeserializeObject<List<GreenTrip>>(jsonFileContents);
 
                 vResponse = await AddGreenTaxiTripsAsVertices(graphbulkExecutor, token, greenTrips);
 
-                //Now add edges between Trips and Locations
+                //Now add all the edges previously created
                 eResponse = await graphbulkExecutor.BulkImportAsync(
-                        ConvertBusinessObjects.CreateEdgesBetweenGreenTripsAndLocations(greenTrips),
+                        Edges,
                         enableUpsert: true,
                         disableAutomaticIdGeneration: true,
                         maxConcurrencyPerPartitionKeyRange: null,

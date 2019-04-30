@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BusinessObjects", "Business
 EndProject
 Project("{151D2E53-A2C4-4D7D-83FE-D05416EBD58E}") = "AzureResources", "AzureResources\AzureResources.deployproj", "{20A4165E-003D-4A8A-96FA-7847C267BF39}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GraphQueries", "GraphQueries\GraphQueries.csproj", "{8CB803D3-9B80-43D3-B6BE-6E8ED1ACF7BE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -41,6 +43,14 @@ Global
 		{20A4165E-003D-4A8A-96FA-7847C267BF39}.Release|Any CPU.Build.0 = Release|Any CPU
 		{20A4165E-003D-4A8A-96FA-7847C267BF39}.Release|x64.ActiveCfg = Release|Any CPU
 		{20A4165E-003D-4A8A-96FA-7847C267BF39}.Release|x64.Build.0 = Release|Any CPU
+		{8CB803D3-9B80-43D3-B6BE-6E8ED1ACF7BE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8CB803D3-9B80-43D3-B6BE-6E8ED1ACF7BE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8CB803D3-9B80-43D3-B6BE-6E8ED1ACF7BE}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{8CB803D3-9B80-43D3-B6BE-6E8ED1ACF7BE}.Debug|x64.Build.0 = Debug|Any CPU
+		{8CB803D3-9B80-43D3-B6BE-6E8ED1ACF7BE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8CB803D3-9B80-43D3-B6BE-6E8ED1ACF7BE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8CB803D3-9B80-43D3-B6BE-6E8ED1ACF7BE}.Release|x64.ActiveCfg = Release|Any CPU
+		{8CB803D3-9B80-43D3-B6BE-6E8ED1ACF7BE}.Release|x64.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
